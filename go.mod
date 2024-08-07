@@ -15,4 +15,4 @@ require (
 	golang.org/x/mod v0.14.0 // indirect
 )
 
-replace github.com/jmattheis/goverter => github.com/kb-sp/goverter v0.0.0-20240807235259-9ac3ea60d606
+replace github.com/jmattheis/goverter => github.com/kb-sp/goverter sp
