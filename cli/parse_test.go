@@ -4,10 +4,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jmattheis/goverter"
-	"github.com/jmattheis/goverter/cli"
-	"github.com/jmattheis/goverter/config"
-	"github.com/jmattheis/goverter/enum"
+	"github.com/kb-sp/goverter"
+	"github.com/kb-sp/goverter/cli"
+	"github.com/kb-sp/goverter/config"
+	"github.com/kb-sp/goverter/enum"
 	"github.com/stretchr/testify/require"
 )
 

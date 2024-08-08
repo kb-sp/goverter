@@ -4,7 +4,7 @@ import (
 	"go/types"
 	"sort"
 
-	"github.com/jmattheis/goverter/enum"
+	"github.com/kb-sp/goverter/enum"
 )
 
 type Enum struct {

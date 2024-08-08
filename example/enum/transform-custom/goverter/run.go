@@ -4,8 +4,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/jmattheis/goverter/cli"
-	"github.com/jmattheis/goverter/enum"
+	"github.com/kb-sp/goverter/cli"
+	"github.com/kb-sp/goverter/enum"
 )
 
 func main() {

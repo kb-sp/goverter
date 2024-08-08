@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jmattheis/goverter/config"
+	"github.com/kb-sp/goverter/config"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
@@ -56,7 +56,7 @@ func TestScenario(t *testing.T) {
 				return
 			}
 
-			err = os.WriteFile(filepath.Join(testWorkDir, "go.mod"), []byte("module github.com/jmattheis/goverter/execution\ngo 1.18"), 0o644)
+			err = os.WriteFile(filepath.Join(testWorkDir, "go.mod"), []byte("module github.com/kb-sp/goverter/execution\ngo 1.18"), 0o644)
 			require.NoError(t, err)
 
 			for name, content := range scenario.Input {
@@ -69,7 +69,7 @@ func TestScenario(t *testing.T) {
 
 			patterns := scenario.Patterns
 			if len(patterns) == 0 {
-				patterns = append(patterns, "github.com/jmattheis/goverter/execution")
+				patterns = append(patterns, "github.com/kb-sp/goverter/execution")
 			}
 
 			files, err := generateConvertersRaw(

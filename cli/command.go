@@ -1,6 +1,6 @@
 package cli
 
-import "github.com/jmattheis/goverter"
+import "github.com/kb-sp/goverter"
 
 type Command interface {
 	_c()

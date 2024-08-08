@@ -5,8 +5,8 @@ import (
 	"os"
 	"runtime/debug"
 
-	"github.com/jmattheis/goverter"
-	"github.com/jmattheis/goverter/enum"
+	"github.com/kb-sp/goverter"
+	"github.com/kb-sp/goverter/enum"
 )
 
 type RunOpts struct {

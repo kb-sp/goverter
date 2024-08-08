@@ -3,8 +3,8 @@ package mismatched_test
 import (
 	"testing"
 
-	"github.com/jmattheis/goverter/example/mismatched"
-	"github.com/jmattheis/goverter/example/mismatched/generated"
+	"github.com/kb-sp/goverter/example/mismatched"
+	"github.com/kb-sp/goverter/example/mismatched/generated"
 	"github.com/stretchr/testify/require"
 )
 

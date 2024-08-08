@@ -3,8 +3,8 @@ package simple_test
 import (
 	"testing"
 
-	"github.com/jmattheis/goverter/example/simple"
-	"github.com/jmattheis/goverter/example/simple/generated"
+	"github.com/kb-sp/goverter/example/simple"
+	"github.com/kb-sp/goverter/example/simple/generated"
 	"github.com/stretchr/testify/require"
 )
 
