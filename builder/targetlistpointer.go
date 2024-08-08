@@ -8,33 +8,25 @@ import (
 /*
 	This applies special sauce to PB []foo -> *[]foo translations:
 
-		var pModelsVendorContactUpdateList []*models.VendorContactUpdate
-		if (*source).Contacts != nil {
-			pModelsVendorContactUpdateList = make([]*models.VendorContactUpdate, len((*source).Contacts))
-			for j := 0; j < len((*source).Contacts); j++ {
-				pModelsVendorContactUpdateList[j] = c.VendorContactUpdateFromPB((*source).Contacts[j])
+	// <UPDATE_HANDLING>
+	pPModelsCostTermUpdateList := pModelsCostTermUpdateList
+	pModelsCostTermUpdateList2 := &pPModelsCostTermUpdateList
+	if len((*source).CostTerms) == 0 {
+			pModelsCostTermUpdateList2 = nil
+	} else {
+			if len(pModelsCostTermUpdateList) == 1 {
+					var isZero bool
+					pModelsv1CostTermUpdate := reflect.ValueOf(*pModelsCostTermUpdateList[0])
+					isZero = isZero || pModelsv1CostTermUpdate.IsZero()
+					pModelsv1CostTermUpdate2 := reflect.ValueOf(pModelsCostTermUpdateList[0])
+					isZero = isZero || pModelsv1CostTermUpdate2.IsZero()
+					if isZero {
+							pPModelsCostTermUpdateList2 := pModelsCostTermUpdateList[:0]
+							pModelsCostTermUpdateList2 = &pPModelsCostTermUpdateList2
+					}
 			}
-		}
-		// <UPDATE_HANDLING>
-		pPModelsContractTermsList := pModelsContractTermsList
-		pModelsContractTermsList2 := &pPModelsContractTermsList
-		if len((*source).ContractTerms) == 0 {
-			pModelsContractTermsList2 = nil
-		} else {
-			if len(pModelsContractTermsList) == 1 {
-				var isZero3 bool
-				pModelsv1ContractTerms := reflect.ValueOf(*pModelsContractTermsList[0])
-				isZero3 = isZero3 || pModelsv1ContractTerms.IsZero()
-				pModelsv1ContractTerms2 := reflect.ValueOf(pModelsContractTermsList[0])
-				isZero3 = isZero3 || pModelsv1ContractTerms2.IsZero()
-				if isZero3 {
-					pPModelsContractTermsList2 := pModelsContractTermsList[:0]
-					pModelsContractTermsList2 = &pPModelsContractTermsList2
-				}
-			}
-		}
-		// </UPDATE_HANDLING>
-		modelsVendorUpdate.Contacts = pModelsVendorContactUpdateList2
+	}
+	// </UPDATE_HANDLING>
 
 */
 
@@ -66,18 +58,20 @@ func (*TargetListPointer) Build(gen Generator, ctx *MethodContext, sourceID *xty
 	sourceValue := ctx.Name(target.ID())
 	targetPtr := ctx.Name(target.PointerInner.ID())
 	emptyList := ctx.Name(target.ID())
-	// emptyPtrValue := ctx.Name(source.ListInner.ID())
 
 	fixCode := []jen.Code{
 		jen.Id(emptyList).Op(":=").Add(id.Code).Index(jen.Empty(), jen.Lit(0)),
 		jen.Id(targetPtr).Op("=").Op("&").Id(emptyList),
 	}
+
 	codes := make([]jen.Code, 0)
 	isZero := ctx.Name("isZero")
 	codes = append(codes,
 		jen.Var().Id(isZero).Bool(),
 	)
+
 	if source.ListInner.Pointer {
+		// If the Inner type is a pointer, first add a nil check.
 		rValue := ctx.Name(source.ListInner.ID())
 		codes = append(codes,
 			jen.Id(rValue).Op(":=").Qual("reflect", "ValueOf").Call(jen.Op("*").Add(id.Code.Clone().Index(jen.Lit(0)))),
@@ -89,12 +83,11 @@ func (*TargetListPointer) Build(gen Generator, ctx *MethodContext, sourceID *xty
 	codes = append(codes,
 		jen.Id(rValue).Op(":=").Qual("reflect", "ValueOf").Call(id.Code.Clone().Index(jen.Lit(0))),
 		jen.Id(isZero).Op("=").Id(isZero).Op("||").Id(rValue).Dot("IsZero").Call(),
-	)
-	codes = append(codes,
 		jen.If(jen.Id(isZero)).Block(fixCode...),
 	)
 
 	stmt = append(stmt,
+		// TODO(kb): Remove the Comments.
 		jen.Comment("<UPDATE_HANDLING>"),
 		jen.Id(sourceValue).Op(":=").Add(id.Code),
 		jen.Id(targetPtr).Op(":=").Op("&").Id(sourceValue),
