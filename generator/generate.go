@@ -1,12 +1,11 @@
 package generator
 
 import (
+	"github.com/StackPackCo/pkg/go/verter"
 	"github.com/dave/jennifer/jen"
 	"github.com/jmattheis/goverter/builder"
 	"github.com/jmattheis/goverter/config"
 	"github.com/jmattheis/goverter/namer"
-
-	"github.com/StackPackCo/pkg/go/verter"
 )
 
 // Config the generate config.

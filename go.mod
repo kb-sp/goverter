@@ -16,3 +16,5 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/mod v0.14.0 // indirect
 )
+
+replace github.com/jmattheis/goverter => github.com/kb-sp/goverter v0.0.0-20240820202320-63eca0c7ed78
