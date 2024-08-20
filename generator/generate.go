@@ -5,6 +5,8 @@ import (
 	"github.com/jmattheis/goverter/builder"
 	"github.com/jmattheis/goverter/config"
 	"github.com/jmattheis/goverter/namer"
+
+	"github.com/StackPackCo/pkg/go/verter"
 )
 
 // Config the generate config.
@@ -21,6 +23,7 @@ var BuildSteps = []builder.Builder{
 	&builder.BasicTargetPointerRule{},
 	&builder.Pointer{},
 	&builder.SourcePointer{},
+	&verter.TargetListPointer{},
 	&builder.TargetPointer{},
 	&builder.Basic{},
 	&builder.Struct{},
