@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/jmattheis/goverter/enum"
-	"github.com/jmattheis/goverter/pkgload"
+	"github.com/kb-sp/goverter/enum"
+	"github.com/kb-sp/goverter/pkgload"
 )
 
 const (

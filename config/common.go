@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 
-	"github.com/jmattheis/goverter/enum"
+	"github.com/kb-sp/goverter/enum"
 )
 
 type Common struct {

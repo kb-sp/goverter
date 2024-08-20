@@ -5,7 +5,7 @@ import (
 	"go/types"
 	"strings"
 
-	"github.com/jmattheis/goverter/method"
+	"github.com/kb-sp/goverter/method"
 )
 
 const (

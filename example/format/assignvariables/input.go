@@ -3,7 +3,7 @@ package house
 import (
 	"database/sql"
 
-	"github.com/jmattheis/goverter/example/format/common"
+	"github.com/kb-sp/goverter/example/format/common"
 )
 
 // goverter:variables
