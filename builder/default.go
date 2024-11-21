@@ -2,7 +2,7 @@ package builder
 
 import (
 	"github.com/dave/jennifer/jen"
-	"github.com/jmattheis/goverter/xtype"
+	"github.com/kb-sp/goverter/xtype"
 )
 
 func buildTargetVar(gen Generator, ctx *MethodContext, sourceID *xtype.JenID, source, target *xtype.Type, errPath ErrorPath) ([]jen.Code, *jen.Statement, *Error) {

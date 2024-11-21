@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/jmattheis/goverter/cli"
+	"github.com/kb-sp/goverter/cli"
 )
 
 func main() {

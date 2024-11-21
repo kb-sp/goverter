@@ -4,10 +4,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/jmattheis/goverter/comments"
-	"github.com/jmattheis/goverter/config"
-	"github.com/jmattheis/goverter/enum"
-	"github.com/jmattheis/goverter/generator"
+	"github.com/kb-sp/goverter/comments"
+	"github.com/kb-sp/goverter/config"
+	"github.com/kb-sp/goverter/enum"
+	"github.com/kb-sp/goverter/generator"
 )
 
 // GenerateConfig the config for generating a converter.

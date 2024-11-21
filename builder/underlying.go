@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/dave/jennifer/jen"
-	"github.com/jmattheis/goverter/xtype"
+	"github.com/kb-sp/goverter/xtype"
 )
 
 // UseUnderlyingTypeMethods handles UseUnderlyingTypeMethods.

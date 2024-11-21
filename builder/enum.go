@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/dave/jennifer/jen"
-	"github.com/jmattheis/goverter/config"
-	"github.com/jmattheis/goverter/enum"
-	"github.com/jmattheis/goverter/xtype"
+	"github.com/kb-sp/goverter/config"
+	"github.com/kb-sp/goverter/enum"
+	"github.com/kb-sp/goverter/xtype"
 )
 
 // Basic handles basic data types.

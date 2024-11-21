@@ -8,7 +8,7 @@ import (
 	"go/types"
 	"strings"
 
-	"github.com/jmattheis/goverter/config"
+	"github.com/kb-sp/goverter/config"
 	"golang.org/x/tools/go/packages"
 )
 

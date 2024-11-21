@@ -1,10 +1,11 @@
 package generator
 
 import (
+	"github.com/StackPackCo/pkg/go/verter"
 	"github.com/dave/jennifer/jen"
-	"github.com/jmattheis/goverter/builder"
-	"github.com/jmattheis/goverter/config"
-	"github.com/jmattheis/goverter/namer"
+	"github.com/kb-sp/goverter/builder"
+	"github.com/kb-sp/goverter/config"
+	"github.com/kb-sp/goverter/namer"
 )
 
 // Config the generate config.
@@ -21,6 +22,7 @@ var BuildSteps = []builder.Builder{
 	&builder.BasicTargetPointerRule{},
 	&builder.Pointer{},
 	&builder.SourcePointer{},
+	&verter.TargetListPointer{},
 	&builder.TargetPointer{},
 	&builder.Basic{},
 	&builder.Struct{},

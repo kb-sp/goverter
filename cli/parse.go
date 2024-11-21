@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/jmattheis/goverter"
-	"github.com/jmattheis/goverter/config"
-	"github.com/jmattheis/goverter/enum"
+	"github.com/kb-sp/goverter"
+	"github.com/kb-sp/goverter/config"
+	"github.com/kb-sp/goverter/enum"
 )
 
 type Strings []string
@@ -131,7 +131,7 @@ OPTIONS:
 Examples:
   %s gen ./example/simple ./example/complex
   %s gen ./example/...
-  %s gen github.com/jmattheis/goverter/example/simple
+  %s gen github.com/kb-sp/goverter/example/simple
   %s gen -g 'ignoreMissing no' -g 'skipCopySameType' ./simple
 
 Documentation:

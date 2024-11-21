@@ -4,10 +4,10 @@ import (
 	"go/types"
 
 	"github.com/dave/jennifer/jen"
-	"github.com/jmattheis/goverter/config"
-	"github.com/jmattheis/goverter/method"
-	"github.com/jmattheis/goverter/namer"
-	"github.com/jmattheis/goverter/xtype"
+	"github.com/kb-sp/goverter/config"
+	"github.com/kb-sp/goverter/method"
+	"github.com/kb-sp/goverter/namer"
+	"github.com/kb-sp/goverter/xtype"
 )
 
 // Builder builds converter implementations, and can decide if it can handle the given type.
